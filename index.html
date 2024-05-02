@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="./script.js"></script>
+    <title>TodosApp</title>
+</head>
+<body>     
+     <h2>ToDo List</h2>
+    <div class="container">
+      <div class="list-container">
+        <div class="lol">
+          <button class="openmo" onclick="openModal()" onmousedown="sound1.play()">?
+          </button>
+          <div id="myModal" class="modal">
+            <h1 class="h11">What is a Todo List?</h1>
+            <p class="p1">It's basically a list where you can add your own tasks as a reminder or just to keep everything on the board.</p>
+              <div class="modal-content">
+                  <span class="close" onclick="closeModal()">&times;</span>
+              </div>
+          </div>
+          <footer>
+            <p class="p2">&copy; Credits to bhaktibhatt. Modified by Vennyfps. 2024.</p>
+          </footer>
+          <script>
+            var modal = document.getElementById("myModal");
+            var inputField = document.getElementById("todo");
+            var btn = document.querySelector(".openmo");
+        
+            function openModal() {
+                modal.style.display = "block";
+                inputField.style.display = "none"; 
+            }
+        
+    
+            function closeModal() {
+                modal.style.display = "none"; 
+                inputField.style.display = "block"; 
+            }
+        
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    closeModal(); 
+                }
+            }
+            var sound1 = new Audio();
+            sound1.src = 'sounds/sound1'
+            const taskContainer = document.querySelector('.task-container');
+
+            function adjustTaskContainerHeight() {
+              const contentHeight = taskContainer.scrollHeight;
+              taskContainer.style.height = contentHeight + 'px';
+            }
+
+          adjustTaskContainerHeight();
+        </script>
+        </div>
+        <div class="task-container">
+            <textarea id="todo" rows="1" cols="70" class="task-textarea"></textarea>
+            <button id="addTask" class="add-button">Add</button> 
+        </div>
+    </div>
+        </div>
+        <button>
+        <textarea id="todo" rows="1" cols="70" placeholder="Add Task"></textarea>
+        <div id="addTask" class="add-task">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="file:///C:/Users/User/Downloads/3b56e636-0306-4fae-b166-0d7c708a9b4a.svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12ZM12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1ZM13 7C13 6.44772 12.5523 6 12 6C11.4477 6 11 6.44772 11 7V11H7C6.44772 11 6 11.4477 6 12C6 12.5523 6.44772 13 7 13H11V17C11 17.5523 11.4477 18 12 18C12.5523 18 13 17.5523 13 17V13H17C17.5523 13 18 12.5523 18 12C18 11.4477 17.5523 11 17 11H13V7Z" fill="#000000"></path>
+            </svg>
+        </div>
+    </div>
+  </button>
+</body>
+</html>
