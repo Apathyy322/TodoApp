@@ -1,5 +1,5 @@
-Modified ToDo App.
+# ToDo App in web! 
 
-Credits to bhaktibhatt.
+Credits to bhaktibhatt for main project and idea!
 
-Made by Venny.
+Modified by Apathy.
